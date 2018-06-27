@@ -1,3 +1,5 @@
 ## Code and data of a manuscript on inferring phenological drivers from landsat time series submitted to Biogeosciences
 
-All data used for reproducing the figures and results are in the subfolder 'data'. All code is in the 'lib' folder, with the actual model contained in the 'lib/model' folder.
+Reference: Senf and Krueger. Inferring drivers of changing land surface phenology from Landsat time series.
+
+All data used for reproducing the figures and results are in the subfolder 'data'. All code is in the 'lib' folder, with the actual model contained in the 'lib/model' folder. The results and figures of the manuscript are in the 'results' and 'figures' folder, respectively.
