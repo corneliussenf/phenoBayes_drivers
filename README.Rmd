@@ -1,0 +1,6 @@
+---
+title: "Code and data of a manuscript on inferring phenological drivers from landsat time series submitted to Biogeosciences."
+output: github_document
+---
+
+All data used for reproducing the figures and results are in the subfolder 'data'. All code is in the 'lib' folder, with the actual model contained in the 'lib/model' folder.
