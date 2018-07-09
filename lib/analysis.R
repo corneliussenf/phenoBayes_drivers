@@ -13,15 +13,11 @@ sampsize <- 25
 
 ## Data ----------------------------------------------------------------
 
-load(paste0("data/landsat/landsat_", foresttype, ".RData"))
-load(paste0("data/dwd_climate/climate_dwd_spring.RData"))
-load(paste0("data/topo/topodata_", foresttype, ".RData"))
+load(paste0("data/landsat_", foresttype, ".RData"))
+load(paste0("data/climate_dwd_spring.RData"))
 
 temporal_drivers <- as.matrix(climate_vars[, c("preseason_temp_anomaly", "chilling_anomaly")])
 temporal_drivers <- cbind(temporal_drivers, interaction = temporal_drivers[, 1] * temporal_drivers[, 2])
-
-spatial_drivers <- cbind(as.vector(scale(topo[, c("elevation")])))
-spatial_drivers[is.na(spatial_drivers)] <- 0
 
 ## Sampling ------------------------------------------------------------
 
@@ -105,6 +101,7 @@ mod_ensemble <- list(data = list(year = 1985:2015, pixel = 1:10),
                      cor_phi = cor_phi)
 
 save(mod_ensemble, file = paste0("results/mod_ensemble_", foresttype, ".RData"))
+load(file = paste0("results/mod_ensemble_", foresttype, ".RData"))
 
 ## Extract Phi ----------------------------------------------------------------
 

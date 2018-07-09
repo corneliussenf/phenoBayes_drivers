@@ -200,7 +200,7 @@ p <- ggplot(validation_dat, aes(x = unfolding_deviance_mean, y = sos_prediction_
   geom_abline(intercept = 0, slope = 1, col = "grey", linetype = "dashed") +
   theme_bw() +
   scale_x_continuous(breaks = c(-20, -10, 0, 10, 20), limits = c(-20, 28)) +
-  labs(x = "Deviance in leaf-out", 
+  labs(x = "Observed variability in leaf unfolding", 
        y = "Predicted variability\nin start of season", 
        col = NULL, shape = NULL) +
   theme(panel.spacing = unit(0, "lines"),
@@ -220,14 +220,14 @@ ggsave(paste0("validation.pdf"), p, path = "figures/", width = 3.5, height = 2)
 
 ## Plot ensemble development of rho (Figure S1) -------------------------
 
-p <- ggplot(rho_development, aes(x = permutations, y = median, 
+p <- ggplot(rho_development, aes(x = factor(permutations), y = median, 
                                  col = foresttype, shape = foresttype)) +
   geom_point() +
   geom_errorbar(aes(ymin = lower, ymax = upper), width = 0, alpha = 0.3) +
   facet_wrap(~predictor, ncol = 3) +
   #facet_grid(predictor ~ foresttype, scales = "free_y") +
   theme_bw() +
-  labs(x = "Number of samples (with n = 10)", 
+  labs(x = "Number of ensemble members (with n = 25)", 
        y = "Estimated effect on variability\nin start of season",
        col = NULL, shape = NULL) +
   geom_hline(yintercept = 0, linetype = "dashed", col = "darkgrey") +
