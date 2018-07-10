@@ -54,9 +54,6 @@ for (i in 1:length(mod)) {
                          )
 }
 
-save(mod, file = paste0("models/models_n25_ensemble10_", foresttype, ".RData"))
-#load(file = paste0("models/models_n25_ensemble10_", foresttype, ".RData"))
-
 ## Ensemble development of rho -----------------------------------------
 
 rho_development <- vector("list", length(mod))
