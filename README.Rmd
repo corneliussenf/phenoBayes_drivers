@@ -5,3 +5,5 @@ The preprint of the paper is available at: https://eartharxiv.org/sx6w2
 Reference: Senf, C., & Krueger, T. (2018). Inferring drivers of changing land surface phenology from Landsat time series. EarthArXiv preprint. DOI: 10.31223/osf.io/sx6w2
 
 All data used for reproducing the figures and results are in the subfolder 'data'. All code is in the 'lib' folder, with the actual model contained in the 'lib/model' folder. The results and figures of the manuscript are in the 'results' and 'figures' folder, respectively.
+
+You need to install the tidyverse and rstan packages in order to run the code. For infos on how to install rstan, please see: https://github.com/stan-dev/rstan/wiki/RStan-Getting-Started
